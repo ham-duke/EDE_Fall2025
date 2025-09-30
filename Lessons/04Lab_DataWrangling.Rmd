@@ -153,11 +153,31 @@ For gather we will use `pivot_longer` and for spread we will use `pivot_wider`.
 #  the new column holding the irradiance type as "Irradiance_Type", and name the
 #  new column holding the irradiance values as "Irradiance_Value".
 
+exc_5 <- NTL.phys.data %>% 
+  pivot_longer(irradianceWater:irradianceDeck, names_to = "irradiance", values_to = "values")
 
 
 #Exercise 6: Spread temperatureC into more than one column based on the depth.
 
+exc_6 <- NTL.phys.data %>% 
+  pivot_wider(names_from = depth, values_from = temperature_C)
 
+
+
+the_seq <- seq(1,55,5)
+
+myfunction<-function(x){
+if(x>50)'Pass'
+else 'Fail'
+}
+
+myfunction(5)
+
+a = c("Alex", "Betty", "Catherine", "David") # character
+b = c(92,95,89,87) # numeric
+c = c(TRUE,TRUE,FALSE,FALSE) # logical
+dataframe = data.frame(a,b,c)
+names(dataframe) = c("name", "test_score","scholarship")
 
 ```
 
